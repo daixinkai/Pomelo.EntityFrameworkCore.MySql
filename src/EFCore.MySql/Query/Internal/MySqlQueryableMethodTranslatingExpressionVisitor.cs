@@ -80,6 +80,8 @@ public class MySqlQueryableMethodTranslatingExpressionVisitor : RelationalQuerya
                        && IsJsonEachKeyColumn(subquery, projectedColumn)));
     }
 
+    /// <inheritdoc />
+    [Obsolete("This method has been obsoleted, use the method accepting a single SelectExpression parameter instead.", true)]
     protected override bool IsValidSelectExpressionForExecuteDelete(
         SelectExpression selectExpression,
         StructuralTypeShaperExpression shaper,

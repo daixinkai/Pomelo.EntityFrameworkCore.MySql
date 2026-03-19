@@ -3,6 +3,7 @@
 
 #nullable enable
 
+using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore.Query;
@@ -25,6 +26,8 @@ namespace Pomelo.EntityFrameworkCore.MySql.Query.Internal
             _options = options;
         }
 
+        /// <inheritdoc />
+        [Obsolete("Override Process() instead", true)]
         public override Expression Optimize(
             Expression queryExpression,
             IReadOnlyDictionary<string, object?> parametersValues,
@@ -60,18 +63,16 @@ namespace Pomelo.EntityFrameworkCore.MySql.Query.Internal
         }
 
         /// <inheritdoc />
-        protected override Expression ProcessSqlNullability(
-            Expression queryExpression,
-            IReadOnlyDictionary<string, object?> parametersValues,
-            out bool canCache)
+        protected override Expression ProcessSqlNullability(Expression queryExpression, ParametersCacheDecorator parametersDecorator)
         {
             Check.NotNull(queryExpression, nameof(queryExpression));
-            Check.NotNull(parametersValues, nameof(parametersValues));
+            Check.NotNull(parametersDecorator, nameof(parametersDecorator));
 
             queryExpression = new MySqlSqlNullabilityProcessor(Dependencies, Parameters)
-                .Process(queryExpression, parametersValues, out canCache);
+                .Process(queryExpression, parametersDecorator);
 
             return queryExpression;
         }
+
     }
 }

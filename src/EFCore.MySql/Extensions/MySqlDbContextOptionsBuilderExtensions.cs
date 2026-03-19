@@ -62,7 +62,8 @@ namespace Microsoft.EntityFrameworkCore
             ConfigureWarnings(optionsBuilder);
 
             var mySqlDbContextOptionsBuilder = new MySqlDbContextOptionsBuilder(optionsBuilder)
-                .TranslateParameterizedCollectionsToConstants();
+                .UseParameterizedCollectionMode(ParameterTranslationMode.Constant);
+                //.TranslateParameterizedCollectionsToConstants();
 
             mySqlOptionsAction?.Invoke(mySqlDbContextOptionsBuilder);
 
@@ -108,7 +109,8 @@ namespace Microsoft.EntityFrameworkCore
             ConfigureWarnings(optionsBuilder);
 
             var mySqlDbContextOptionsBuilder = new MySqlDbContextOptionsBuilder(optionsBuilder)
-                .TranslateParameterizedCollectionsToConstants();
+                .UseParameterizedCollectionMode(ParameterTranslationMode.Constant);
+                //.TranslateParameterizedCollectionsToConstants();
 
             mySqlOptionsAction?.Invoke(mySqlDbContextOptionsBuilder);
 
@@ -158,7 +160,8 @@ namespace Microsoft.EntityFrameworkCore
             ConfigureWarnings(optionsBuilder);
 
             var mySqlDbContextOptionsBuilder = new MySqlDbContextOptionsBuilder(optionsBuilder)
-                .TranslateParameterizedCollectionsToConstants();
+                .UseParameterizedCollectionMode(ParameterTranslationMode.Constant);
+                //.TranslateParameterizedCollectionsToConstants();
 
             mySqlOptionsAction?.Invoke(mySqlDbContextOptionsBuilder);
 
@@ -205,7 +208,8 @@ namespace Microsoft.EntityFrameworkCore
             ConfigureWarnings(optionsBuilder);
 
             var mySqlDbContextOptionsBuilder = new MySqlDbContextOptionsBuilder(optionsBuilder)
-                .TranslateParameterizedCollectionsToConstants();
+                .UseParameterizedCollectionMode(ParameterTranslationMode.Constant);
+                //.TranslateParameterizedCollectionsToConstants();
 
             mySqlOptionsAction?.Invoke(mySqlDbContextOptionsBuilder);
 

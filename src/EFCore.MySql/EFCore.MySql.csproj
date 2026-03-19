@@ -4,8 +4,10 @@
     <Description>Pomelo's MySQL database provider for Entity Framework Core.</Description>
     <TargetFramework>$(PomeloTargetFramework)</TargetFramework>
     <AssemblyName>Pomelo.EntityFrameworkCore.MySql</AssemblyName>
-    <RootNamespace>Pomelo.EntityFrameworkCore.MySql</RootNamespace>
+    <RootNamespace>Pomelo.EntityFrameworkCore.MySql</RootNamespace>    
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageId>Pomelo.EntityFrameworkCore.MySqlEx</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <NoWarn>$(NoWarn);EF9100</NoWarn> <!-- Precompiled query is experimental -->
     <NoWarn>$(NoWarn);CS1591</NoWarn> <!-- TODO: Missing XML comment for publicly visible type or member 'Type_or_Member' -->
   </PropertyGroup>
